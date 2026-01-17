@@ -151,11 +151,11 @@ plt.show()
 prediction = model.predict(np.expand_dims(img_array, axis=0))
 pred_label = "Ÿw Fractured" if prediction[0][0] > 0.5 else " Normal"
 confidence = prediction[0][0] if prediction[0][0] > 0.5 else 1 - prediction[0][0]
-print(f"🔍 Predicted Label: {pred_label} (Confidence: {confidence*100:.2f}%)")
+print(f" Predicted Label: {pred_label} (Confidence: {confidence*100:.2f}%)")
 
 
 # ============================================================
-# 🟦 USER INPUT IMAGE PREDICTION (FINAL & FIXED VERSION)
+# USER INPUT IMAGE PREDICTION (FINAL & FIXED VERSION)
 # ============================================================
 
 from google.colab import files
@@ -180,7 +180,7 @@ for img_name in uploaded.keys():
     # Model prediction (0 = fractured, 1 = normal)
     prediction = model.predict(img_array)[0][0]
 
-    # 🔥 FIXED LABEL MAPPING
+    #  FIXED LABEL MAPPING
     if prediction > 0.5:
         label = "✅ Normal"
         confidence = prediction * 100
